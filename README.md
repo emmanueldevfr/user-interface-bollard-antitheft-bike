@@ -19,3 +19,7 @@ You just have to add a star to this directory to support my work ❤
 
 Although originally a study project, you can contribute to the community. However, very few updates will be available in the future.
 
+### Thank you ❤
+
+Thanks to Jérémy S. for the PHP programming of this project.
+

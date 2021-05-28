@@ -4,7 +4,7 @@ Study project realized in HTML/CSS/PHP/SQL allowing the locking and unlocking of
 ### Install this directory on your website 
 
 ```
-1 - Download the latest version of the directory by going to Releases or by clicking on this link directly:
+1 - Download the latest version of the directory by going to Releases or by clicking on this link directly: https://github.com/emmanueldevfr/user-interface-bollard-antitheft-bike/releases/tag/1.0.0
 2 - Import the files into your website, in the main root.
 3 - Create a database from your website management panel, and import the db.sql file.
 4 - Enter the connection identifiers of your database in the file database.php located in the directory inc.

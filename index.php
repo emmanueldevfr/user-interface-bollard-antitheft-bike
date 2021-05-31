@@ -34,7 +34,7 @@ try {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Interface utilisateur</title>
+    <title>User interface</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
@@ -42,12 +42,12 @@ try {
 </head>
 <body>
 <ul class="topnav">
-  <li><b><a>Interface utilisateur</a></b></li>
+  <li><b><a>User interfacer</a></b></li>
 </ul>
 <div style="text-align: center;">
-    <h3>Votre identifiant unique : <?php echo $id; ?></h3>
-    <h3>Numéro de la borne : <?php echo $borne_number; ?></h3>
-    <h3>Statut de la borne: <div id="status"><?php echo $status; ?></div></h3>
+    <h3>Your unique ID : <?php echo $id; ?></h3>
+    <h3>Terminal number : <?php echo $borne_number; ?></h3>
+    <h3>Terminal status: <div id="status"><?php echo $status; ?></div></h3>
     <br /><br />
 
     <img onclick="red(this)" src="<?= $source; ?>" alt="" class="img">

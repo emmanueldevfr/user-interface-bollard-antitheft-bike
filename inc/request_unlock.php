@@ -1,5 +1,7 @@
 <?php
 require('./database.php');
+date_default_timezone_set('Europe/Paris');
+$date = date('d-m-y h:i:s');
 $id = htmlspecialchars($_GET["id"]);
 $borne_number = htmlspecialchars($_GET["borne"]);
 
@@ -12,9 +14,13 @@ try {
     {
         $sql = "UPDATE borne_data SET status = '0' WHERE id = '$id'";
         $db->exec($sql);
+        $sql_logs = "INSERT INTO `borne_logs` (`id`, `status`, `borne_number`, `date`, `#`) VALUES ('$id', '0', '$borne_number', '$date', NULL)";
+        $db->exec($sql_logs);
     }else{
             $sql = "INSERT INTO `borne_data` (`id`, `status`, `borne_number`) VALUES ('$id', '0', $borne_number)";
             $db->exec($sql);
+            $sql_logs = "INSERT INTO `borne_logs` (`id`, `status`, `borne_number`, `date`, `#`) VALUES ('$id', '0', '$borne_number', '$date', NULL)";
+            $db->exec($sql_logs);
     }}
     catch(PDOException $e){
               echo "Erreur : " . $e->getMessage();

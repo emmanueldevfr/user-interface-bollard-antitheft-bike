@@ -1,10 +1,14 @@
-<?php
+<?php.
+// Retrieve information about the terminal in the URL
 $id = htmlspecialchars($_GET["id"]);
 $borne_number = htmlspecialchars($_GET["borne"]);
+// Intiailization of variables
 $status = "Inconnu";
 $source = "assets/images/unlock.png";
+// Call concerning the database identifiers
 require('inc/database.php');
 
+// Request for connection to the database, then check if the terminal already exists or not in the database, and retrieve its status
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -55,9 +59,11 @@ try {
 </body>
 
 <script>
+    // Retrieving variables in JS & PHP
     let id = "<?= $id; ?>";
     let borne_number = "<?= $borne_number; ?>";
     let status = document.getElementById("status")
+        // Function allowing interaction when the lock button is pressed
     function red(x) {
         if (x.src.endsWith("assets/images/unlock.png")) { 
             const image_lock = "assets/images/lock.png";
@@ -68,6 +74,7 @@ try {
         } else  {
             const image_unlock = "assets/images/unlock.png";
             x.src = image_unlock;
+             // Send request in PHP => request_unlock.php
             fetch(`inc/request_unlock.php?id=${id}&borne=${borne_number}`, {}).then(json => console.log(json))
             status.innerHTML = "Devérouillé";
         }

@@ -1,4 +1,4 @@
-<?php.
+<?php
 // Retrieve information about the terminal in the URL
 $id = htmlspecialchars($_GET["id"]);
 $borne_number = htmlspecialchars($_GET["borne"]);
